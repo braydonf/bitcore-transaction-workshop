@@ -119,7 +119,7 @@ node
                 <code>
 var bitcore = require('bitcore-lib');
 var qrcode = require('qrcode-terminal');
-var privateKey = bitcore.PrivateKey(‘testnet’);
+var privateKey = bitcore.PrivateKey('testnet');
 var address = privateKey.toAddress()
 qrcode.generate('bitcoin:' + privateKey.toAddress());
                 </code>
@@ -144,10 +144,11 @@ https://test-insight.bitpay.com/api/addr/[ADDRESSHERE]/utxo
                 <code>
 var tx = bitcore.Transaction();
 tx.from([UTXOHERE]);
-tx.to('placeholderaddress', [BTC AMT] * 1e8)
-tx.change(address)
-tx.sign(privateKey)
-tx.serialize()
+tx.to('placeholderaddress', 900000);
+tx.change(address);
+tx.addData('my name', 'ascii');
+tx.sign(privateKey);
+tx.serialize();
                 </code>
               </pre>
             </p>
