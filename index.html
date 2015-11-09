@@ -50,15 +50,15 @@
 
         <section>
           <section>
-            <p>A bitcoin transaction is the means to mutating the state of the blockchain and transferring bitcoin from one encumbrance to another.</p>
+            <p>You can think of the bitcoin blockchain as a database. <br/>In bitcoin, a transaction can move bitcoin from one address to another, by defining how a transaction output can be modified later.</p>
           </section>
 
           <section>
-            <p>A transaction has inputs and outputs. The outputs describe the new encumbrances ("to") where the inputs unlock previous outputs ("from"). An input will reference an previous output and provide an additional unlocking script. The output also has a locking script and a bitcoin value.</p>
+            <p>A transaction has inputs and outputs. <br/>The outputs describe the new "locks" where the inputs unlock previous outputs. An input will reference an previous output and provide an additional unlocking script.</p>
           </section>
 
           <section>
-            <p>Bitcoin uses a domain specific, stack based language to construct encumbrances called "script". The input script plus the output script are combined and executed. If the end value is true then the bitcoin is unlocked.</p>
+            <p>Bitcoin uses a domain specific, stack based language to construct "locks", called script. The input script plus the output script are combined and executed. If the end value is true then the bitcoin is unlocked, and the value can move to a new output.</p>
           </section>
 
           <section>
@@ -82,13 +82,13 @@
           </section>
 
           <section>
-            <p><code>OP_HASH160 20 0xebb275803c6eb384e89ec52f654ea610883425c9 OP_EQUAL</code></p>
-            <p>Pay to script hash <em>(multisig)</em></p>
+            <p><code>OP_2 33 0x02987fe2... 33 0x033049a... OP_2 OP_CHECKMULTISIG</code></p>
+            <p>Pay to multiple public keys <em>(bare multisig)</em></p>
           </section>
 
           <section>
-            <p><code>OP_2 33 0x02987fe2... 33 0x033049a... OP_2 OP_CHECKMULTISIG</code></p>
-            <p>Pay to multiple public keys <em>(bare multisig)</em></p>
+            <p><code>OP_HASH160 20 0xebb275803c6eb384e89ec52f654ea610883425c9 OP_EQUAL</code></p>
+            <p>Pay to script hash <em>(multisig)</em></p>
           </section>
 
         </section>
