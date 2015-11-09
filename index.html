@@ -49,8 +49,19 @@
         </section>
 
         <section>
+          <h3>Bitcoin</h3>
+          <p>Bitcoin is a public database with a record of numbers that individuals can transfer with transactions. These transactions are collected into blocks and timestamped. Each block is uniquely identified and will reference the previous block. To prevent there being two competing block chains, computational effort must be used for a block to become valid. This roughly averages the time between blocks to be around ten minutes.</p>
+        </section>
+
+        <section>
+          <h3>Public Key Cryptography</h3>
+          <p>Is a mathematical means to be able to verify that someone has knowledge of a secret large number without it being necessary to share the number.</p>
+        </section>
+
+        <section>
           <section>
-            <p>You can think of the bitcoin blockchain as a database. <br/>In bitcoin, a transaction can move bitcoin from one address to another, by defining how a transaction output can be modified later.</p>
+            <h3>Transactions</h3>
+            <p>You can think of the bitcoin blockchain as a database. <br/>In bitcoin, a transaction can move bitcoin from one address to another by defining how a transaction can be modified.</p>
           </section>
 
           <section>
@@ -161,6 +172,33 @@ tx.serialize();
 https://test-insight.bitpay.com/tx/send
                 </code>
               </pre>
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Block Explorer</h3>
+            <p>If you would like to run your own block explorer API instead of using <code>https://test-insight.bitpay.com</code>, you can run these two commands.</p>
+            <p>
+              <pre>
+                <code>
+$ npm install -g bitcore
+$ bitcored
+                </code>
+              </pre>
+            </p>
+            <p>For more details: https://bitcore.io/guides/full-node</p>
+          </section>
+          <section>
+            <h3>Deployment</h3>
+            <p>The unique attribute to look for when searching for a hosted provider is an ability to scale the disk usage independently from CPU and memory usage. A few ideas:</p>
+            <ul>
+              <li>https://www.gandi.net/ <em>(accepts bitcoin)</em></li>
+              <li>https://aws.amazon.com/ec2/</li>
+              <li>https://rackspace.com/</li>
+            </ul>
+            <p>
+              <small>You can also take a look at https://bitnodes.21.co/nodes/?q=bitcore for ideas.</small>
             </p>
           </section>
         </section>
