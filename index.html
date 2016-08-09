@@ -139,9 +139,10 @@ node
                 <code>
 var bitcore = require('bitcore-lib');
 var qrcode = require('qrcode-terminal');
-var privateKey = bitcore.PrivateKey('testnet');
-var address = privateKey.toAddress()
+var privateKey = new bitcore.PrivateKey('testnet');
+var address = privateKey.toAddress();
 qrcode.generate('bitcoin:' + privateKey.toAddress());
+console.log(address);
                 </code>
               </pre>
             </p>
@@ -151,8 +152,8 @@ qrcode.generate('bitcoin:' + privateKey.toAddress());
             <p>
               <pre>
                 <code>
-https://test-insight.bitpay.com/address/[ADDRESSHERE]
-https://test-insight.bitpay.com/api/addr/[ADDRESSHERE]/utxo
+https://test-insight.bitpay.com/address/ADDRESSHERE
+https://test-insight.bitpay.com/api/addr/ADDRESSHERE/utxo
                 </code>
               </pre>
             </p>
@@ -163,12 +164,12 @@ https://test-insight.bitpay.com/api/addr/[ADDRESSHERE]/utxo
               <pre>
                 <code>
 var tx = bitcore.Transaction();
-tx.from([UTXOHERE]);
-tx.to('placeholderaddress', 900000);
-tx.change(address);
-tx.addData('my name', 'ascii');
-tx.sign(privateKey);
-tx.serialize();
+tx.from(UTXOHERE);               // adds input to transaction
+tx.to(ADDRESSHERE, 900000);      // adds output to transaction
+tx.change(YOURADDRESS);          // adds output with remainder amount
+tx.addData('my name', 'ascii');  // adds output with data
+tx.sign(privateKey);             // adds scripts to inputs
+tx.serialize();                  // serializes as a hex string
                 </code>
               </pre>
             </p>
